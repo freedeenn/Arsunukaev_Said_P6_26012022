@@ -51,12 +51,6 @@ exports.getOneSauce = (req, res, next) => {
 /// MODIFIER UNE SAUCE //
 exports.modifySauce = (req, res, next) => {
 	Sauce.findOne({ _id: req.params.id }).then((sauce) => {
-		if (sauce.userId !== req.auth.userId) {
-			return res
-				.status(401)
-				.json({ error: new Error("Reuête non autorisée !") });
-		}
-
 		const sauceObject = req.file
 			? {
 					...JSON.parse(req.body.sauce),
@@ -78,11 +72,6 @@ exports.modifySauce = (req, res, next) => {
 exports.deleteSauce = (req, res, next) => {
 	Sauce.findOne({ _id: req.params.id })
 		.then((sauce) => {
-			if (sauce.userId !== req.auth.userId) {
-				return res
-					.status(401)
-					.json({ error: new Error("Reuête non autorisée !") });
-			}
 			/* récupérer l'imageUrl retournée par la BDD, stockée dans /images/
     qu'on peut split vu qu'elle est entre deux chemins /.../
     split va retourner deux éléments dans un tableau :
