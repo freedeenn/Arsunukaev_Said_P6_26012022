@@ -33,7 +33,6 @@ exports.login = (req, res, next) => {
 	// on vérifie si l'email utilisateur existe dans la BDD
 	User.findOne({ email: req.body.email })
 		.then((user) => {
-			console.log("user", user);
 			if (!user) {
 				// s'il n'existe pas
 				return res
@@ -44,7 +43,6 @@ exports.login = (req, res, next) => {
 				// on compare les entrées et les données
 				.compare(req.body.password, user.password)
 				.then((valid) => {
-					console.log("validation", valid);
 					if (!valid) {
 						// si c'est différent
 						return res.status(401).json({ error: "Mot de passe incorrect !" });

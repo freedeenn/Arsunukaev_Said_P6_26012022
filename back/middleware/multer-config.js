@@ -12,7 +12,7 @@ const MIME_TYPES = {
 };
 
 // on enregistre les images téléchargées par le user dans le disc
-// la config de multer nécessite deux arguments : destination + filename prenant prenant 3 params chacun
+// la config de multer nécessite deux arguments : destination + filename prenant 3 params chacun
 const storage = multer.diskStorage({
 	// la destination
 	destination: (req, file, callback) => {
