@@ -1,7 +1,0 @@
-PUT  http://localhost:3000/api/sauces/61ff18f84dfc7d63c33dcd3e
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWY3MmIwMjg2N2ZmNzM1ZWFhMjllMDciLCJpYXQiOjE2NDQ4NTkxNzQsImV4cCI6MTY0NDk0NTU3NH0.2XxK2ZA81AoeOm3G1v4-j1wuBN7jBjXjbhxFy_A_zOQ
-Content-Type: application/json
-
-{
-    "name": "freedeenn@gmail.com",
-}
