@@ -13,6 +13,6 @@ module.exports = (req, res, next) => {
 			.catch((error) => res.status(404).json({ error }));
 	} catch {
 		// renvoyer une erreur 401, problème d'authentification
-		res.status(401).json({ error: new Error("La requete pas valide !") });
+		res.status(401).json({ error: new Error("La requete n'est pas valide !") });
 	}
 };
